@@ -10,8 +10,8 @@
   <body>
     <div class="menubar">
       <ul>
-        <li class="active">
-          <a href="#">Home</a>
+        <li id="menu1">
+          <a href="#" id="menu1">Home</a>
           <div class="submenu-1">
             <ul>
               <li><a href="#">Content</a></li>
@@ -21,8 +21,8 @@
             </ul>
           </div>
         </li>
-        <li>
-          <a href="#">Service</a>
+        <li id="menu2">
+          <a href="#" id="menu2">Service</a>
           <div class="submenu-1">
             <ul>
               <li><a href="#">Content</a></li>
@@ -32,8 +32,8 @@
             </ul>
           </div>
         </li>
-        <li>
-          <a href="#">Blog</a>
+        <li id="menu3">
+          <a href="#" id="menu3">Blog</a>
           <div class="submenu-1">
             <ul>
               <li><a href="#">Content</a></li>
@@ -43,8 +43,8 @@
             </ul>
           </div>
         </li>
-        <li>
-          <a href="#">Contact</a>
+        <li id="menu4">
+          <a href="#" id="menu4">Contact</a>
           <div class="submenu-1">
             <ul>
               <li><a href="#">Content</a></li>
@@ -56,5 +56,23 @@
         </li>
       </ul>
     </div>
+
+    <script>
+      const menus = [];
+      for (let i = 1; i <= 4; i++) {
+        const menu = document.getElementById(`menu${i}`);
+        menus.push(menu);
+      }
+
+      document.addEventListener("click", (e) => {
+        menus.map((menu) => {
+          if (e.target.id === menu.id) {
+            menu.classList.add("active");
+          } else {
+            menu.classList.remove("active");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
